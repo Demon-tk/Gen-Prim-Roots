@@ -29,7 +29,7 @@ def calculate_first_prim_root(n):
 
 def calculate_other_prim_root(n, first_prime_root):
     my_set = {first_prime_root}
-    for x in range(2, n):
+    for x in range(2, n-1):
         if gcd(x, n - 1) == 1:
             my_set.add(str(first_prime_root) + '^' + str(x % n))
     return my_set
@@ -37,7 +37,7 @@ def calculate_other_prim_root(n, first_prime_root):
 
 if __name__ == '__main__':
     # Get number
-    n = int(get_input())
+    n = 97#int(get_input())
     # Do calculations
     first_prime_root = calculate_first_prim_root(n)
     if first_prime_root is not None:
